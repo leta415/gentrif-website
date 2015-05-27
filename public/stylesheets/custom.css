@@ -1,0 +1,37 @@
+#cssmenu {
+  background: #333;
+  list-style: none;
+  /*margin-left: 100px;*/
+  padding: 0;
+  /*width: 18em;*/
+  display: inline-block;
+}
+
+#cssmenu li {
+  font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#cssmenu a {
+  background: #333;
+  border-bottom: 1px solid #393939;
+  color: #ccc;
+  display: block;
+  margin: 0;
+  padding: 25px 12px;
+  text-decoration: none;
+  font-weight: normal;
+}
+#cssmenu a:hover {
+  background: #2580a2 url("/img/hover.gif") left center no-repeat;
+  color: #fff;
+  padding-bottom: 25px;
+}
+
+#panel {
+  /*min-height: 462px;*/
+  background: #333;
+  /*border: 2px solid white;*/
+  display: inline-block;
+}

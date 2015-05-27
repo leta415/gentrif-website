@@ -13,7 +13,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/boilerplate.css" />
+    <link rel="stylesheet" href="stylesheets/custom.css" />
   </head>
   <body >
     <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
@@ -211,19 +212,25 @@
 
 <section class="container-fluid" id="section3">
     <h1 class="text-center">Diving into the Numbers</h1>
+    <br>
+    <br>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3" id="cssmenu">
+
+        <!-- Data visualization menu -->
+        <div class="col-sm-3 col-md-3" id="cssmenu">
             <br>
             <ul>
-                <li class='active'><a href='#'><span>Overview</span></a></li>
-                <li><a href='#'><span>Map</span></a></li>
-                <li><a href='#'><span>Demographics</span></a></li>
-                <li><a href='#'><span>Median Household Income</span></a></li>
-                <li><a href='#'><span>Median Home Value</span></a></li>
-                <li class='last'><a href='#'><span>Bachelor's Degrees</span></a></li>
+                <li id='overviewButton' class='active'><a href='javascript:overview();'><span>Overview</span></a></li>
+                <li id='mapButton'><a href='javascript:map();'><span>Map</span></a></li>
+                <li id='demographicsButton'><a href='javascript:demog();'><span>Demographics</span></a></li>
+                <li id='incomeButton'><a href='javascript:income();'><span>Median Household Income</span></a></li>
+                <li id='homevaluesButton'><a href='javascript:homeval();'><span>Median Home Value</span></a></li>
+                <li id='bachdegreesButton' class='last'><a href='javascript:bachdeg();'><span>Bachelor's Degrees</span></a></li>
             </ul>
         </div>
-        <div class="col-sm-6 col-sm-offset-3" id="panel">
+
+        <!-- Data visualization panel -->
+        <div class="col-sm-9 col-md-9" id="panel">
 
         </div>
     </div>
@@ -470,6 +477,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <script src="javascripts/scripts.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+    <script src="/javascripts/dataPanels.js"></script>
   </body>
 </html>
