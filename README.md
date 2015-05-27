@@ -1,0 +1,2 @@
+# gentrif-website
+Gentrification is becoming more and more of a trend in certain geographical areas of the United States, as wealthier residents creep into rundown neighborhoods, causing an increase of the standard of living in those neighborhoods, and thus eventually forcing the eviction of poorer residents. Given access to the UCSD DELPHI datasets (a set of health data pertaining to the San Diego county), we want to visualize a subset of these datasets that may help us make reasonable assumptions about how gentrified certain parts of San Diego are. 
