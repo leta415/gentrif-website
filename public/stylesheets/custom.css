@@ -30,8 +30,33 @@
 }
 
 #panel {
-  /*min-height: 462px;*/
-  background: #333;
+  /*min-height: 1000px;*/
+  background: white;
+  text-align: center;
   /*border: 2px solid white;*/
   display: inline-block;
+}
+
+
+.bar {
+  fill: #7E8F7C;
+}
+
+.bar:hover {
+  fill: #3B3738;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
 }

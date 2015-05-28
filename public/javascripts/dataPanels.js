@@ -151,6 +151,8 @@ function homeval() {
 
 function bachdeg() {
     // console.log("inside bachdeg()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=bachelors+degrees'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
+    renderEducation();
+    // var htmlString = "<img src='//placehold.it/1000x462&text=bachelors+degrees'>";
+    // $('#panel').html(htmlString);
 }
