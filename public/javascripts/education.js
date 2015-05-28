@@ -1,3 +1,4 @@
+// Function to get education data and render the data visualization on the panel
 function renderEducation() {
 
     // var opts = {
@@ -26,7 +27,6 @@ function renderEducation() {
     var xAxis = d3.svg.axis()
       .scale(scaleX)
       .orient("bottom");
-
     var yAxis = d3.svg.axis()
       .scale(scaleY)
       .orient("left");
@@ -54,18 +54,26 @@ function renderEducation() {
     svg.call(tip);
 
 
-    //get json object which contains media counts
+
+    //get json object which contains areas corresponding with their total number of bach and master degrees
     d3.json('/data/education', function(error, data) {
-      console.log("type check: " + typeof data[0].sum);
+      // console.log("type check: " + typeof data[0].sum);
+      
+      // a flag used to keep track of whether or not to sort or unsort the bars. right now there is no UI for sorting yet.
       var sorted = false;
-      // data.map(function(d) {return parseInt(d.sum)});
+
+      // save the original order of the area names
       var origDomain = data.slice().map(function(d) {
         return d.Area;
       });
-      //set domain of x to be all the usernames contained in the data
+
+
+      // set domain of x to be all the area names contained in the data
       scaleX.domain(data.map(function(d) { return d.Area; }));
-      //set domain of y to be from 0 to the maximum media count returned
+      //set domain of y to be from 0 to the maximum number of bach/master degrees returned
+      // make sure numbers coming in are ints, if not, parse
       scaleY.domain([0, d3.max(data, function(d) { return parseInt(d.sum); })]);
+
 
       //set up x axis
       svg.append("g")
@@ -106,27 +114,14 @@ function renderEducation() {
           return scaleY(d.sum); 
         })
         .attr("height", function(d) { return height - scaleY(d.sum); })
-        // .on("mouseover", function(d) {
-        //   div.transition()        
-        //       .duration(200)      
-        //       .style("opacity", .9); 
-        //   div .html(d.username)
-        //   // div .html(d.counts.media)
-        //       .style("left", (d3.event.pageX) + "px")
-        //       .style("top", (d3.event.pageY - 28) + "px");
-        // })
-        // .on("mouseout", function(){
-        //   div.transition()
-        //       .duration(500)
-        //       .style("opacity", 0);
-        // })
         .on('mouseover', tip.show)
-          .on('mouseout', tip.hide);
+        .on('mouseout', tip.hide);
 
 
-
+        // set up sorting on these div elements. sorting UI is not set up yet.
         d3.select("#sortClickImgDiv").on("click", sort);
         d3.select("#unsortClickImgDiv").on("click", unsort);
+
 
         function sort() {   
           if (sorted) return;
@@ -163,6 +158,7 @@ function renderEducation() {
               .delay(delay);
         }
 
+
         function unsort() {  
           if (!sorted) return;
           sorted = false;
@@ -194,4 +190,4 @@ function renderEducation() {
         }
     });
 
-}
+}  //end of renderEducation()
