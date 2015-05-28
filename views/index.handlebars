@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+    <script src="javascripts/d3pie.min.js"></script>
 
     <link rel="stylesheet" href="stylesheets/boilerplate.css" />
     <link rel="stylesheet" href="stylesheets/custom.css" />
@@ -222,7 +224,9 @@
             <ul>
                 <li id='overviewButton' class='active'><a href='javascript:overview();'><span>Overview</span></a></li>
                 <li id='mapButton'><a href='javascript:map();'><span>Map</span></a></li>
-                <li id='demographicsButton'><a href='javascript:demog();'><span>Demographics</span></a></li>
+                <li id='demographicsAButton'><a href='javascript:demoAge();'><span>Demographics- Age</span></a></li>
+                <li id='demographicsRButton'><a href='javascript:demoRace();'><span>Demographics- Race</span></a></li>
+                <li id='demographicsGButton'><a href='javascript:demoGender();'><span>Demographics- Gender</span></a></li>
                 <li id='incomeButton'><a href='javascript:income();'><span>Median Household Income</span></a></li>
                 <li id='homevaluesButton'><a href='javascript:homeval();'><span>Median Home Value</span></a></li>
                 <li id='bachdegreesButton' class='last'><a href='javascript:bachdeg();'><span>Bachelor's Degrees</span></a></li>
