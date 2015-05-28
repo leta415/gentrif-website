@@ -197,13 +197,12 @@ router.get('/education', function (req, res) {
   pg.connect(conString, function(err, client, done) {
     if(err) return console.log(err);
 
-    var query = 'SELECT \"Area\", SUM(\"Population\") AS \"Population\" FROM hhsa_san_diego_demographics_education_2012_norm WHERE \"Education\"=\'Bachelor\'\'s degree (age 25 and older)\' OR \"Education\"=\'Master\'\'s degree (age 25 and older)\' GROUP BY \"Area\"';
+    var query = 'SELECT \"Area\", SUM(\"Population\") AS \"sum\" FROM hhsa_san_diego_demographics_education_2012_norm WHERE \"Education\"=\'Bachelor\'\'s degree (age 25 and older)\' OR \"Education\"=\'Master\'\'s degree (age 25 and older)\' GROUP BY \"Area\"';
     client.query(query, function(err, result) {
       // return the client to the connection pool for other requests to reuse
       done();
-
-      res.writeHead("200", {'content-type': 'application/json'});
-      res.end(JSON.stringify(result));
+      console.log(result.rows);
+      res.json(result.rows);
     });
   });
 });

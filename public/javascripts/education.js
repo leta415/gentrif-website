@@ -55,7 +55,7 @@ function renderEducation() {
 
 
     //get json object which contains media counts
-    d3.json('/data', function(error, data) {
+    d3.json('/data/education', function(error, data) {
       console.log("type check: " + typeof data[0].sum);
       var sorted = false;
       // data.map(function(d) {return parseInt(d.sum)});
