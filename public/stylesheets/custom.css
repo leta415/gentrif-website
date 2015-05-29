@@ -26,7 +26,8 @@
 #cssmenu a:hover {
   background: #2580a2 url("/img/hover.gif") left center no-repeat;
   color: #fff;
-  padding-bottom: 25px;
+  margin: 0;
+  /*padding-bottom: 16px;*/
 }
 
 #panel {

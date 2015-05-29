@@ -42,17 +42,17 @@ function map() {
 function demoAge() {
     // console.log("inside demog()");
     //var htmlString = "<img src='//placehold.it/1000x462&text=demographics'>";
-    $('#panel').html("<div>hi</div>");
+    // $('#panel').html("<div>hi</div>");
     renderDemoAge();
 }
 
 function demoRace() {
-    $('#panel').html('');
+    // $('#panel').html('');
     renderDemoRace();
 }
 
 function demoGender() {
-    $('#panel').html('');
+    // $('#panel').html('');
     renderDemoGender();
 }
 

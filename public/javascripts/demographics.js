@@ -2,6 +2,7 @@
 function renderDemoAge() {
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
+        $('#panel').html('');
         var city = data.rows[0].Area;
         var ages = data.rows[0].Age;
         $.each(ages, function(i, val){
@@ -103,6 +104,7 @@ function renderDemoAge() {
 function renderDemoRace() {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
+        $('#panel').html('');
         var city = data.rows[0].Area;
         var races = data.rows[0].Race;
         $.each(races, function(i, val){
@@ -199,6 +201,7 @@ function renderDemoRace() {
 function renderDemoGender() {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
+        $('#panel').html('');
         console.log(data);
         var city = data.rows[0].Area;
         var genders = data.rows[0].Gender;
