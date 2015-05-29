@@ -42,99 +42,18 @@ function map() {
 function demoAge() {
     // console.log("inside demog()");
     //var htmlString = "<img src='//placehold.it/1000x462&text=demographics'>";
-    $('#panel').html("");
-    var pie = new d3pie("panel", {
-    "header": {
-        "title": {
-            "text": "Demographics - Age",
-            "fontSize": 24,
-            "font": "open sans",
-            "color": "#ffffff"
-        },
-        "subtitle": {
-            "color": "#999999",
-            "fontSize": 12,
-            "font": "open sans"
-        },
-        "titleSubtitlePadding": 9
-    },
-    "footer": {
-        "color": "#999999",
-        "fontSize": 10,
-        "font": "open sans",
-        "location": "bottom-left"
-    },
-    "size": {
-        "canvasWidth": 590,
-        "pieOuterRadius": "87%"
-    },
-    "data": {
-        "sortOrder": "value-asc",
-        "content": [
-            {
-                "label": "JavaScript",
-                "value": 264131,
-                "color": "#2383c1"
-            },
-            {
-                "label": "Ruby",
-                "value": 218812,
-                "color": "#64a61f"
-            }
-        ]
-    },
-    "labels": {
-        "outer": {
-            "pieDistance": 32
-        },
-        "inner": {
-            "hideWhenLessThanPercentage": 3
-        },
-        "mainLabel": {
-            "color": "#ffffff",
-            "fontSize": 11
-        },
-        "percentage": {
-            "color": "#ffffff",
-            "decimalPlaces": 0
-        },
-        "value": {
-            "color": "#ffffff",
-            "fontSize": 11
-        },
-        "lines": {
-            "enabled": true
-        },
-        "truncation": {
-            "enabled": true
-        }
-    },
-    "effects": {
-        "pullOutSegmentOnClick": {
-            "effect": "linear",
-            "speed": 400,
-            "size": 8
-        }
-    },
-    "misc": {
-        "gradient": {
-            "enabled": true,
-            "percentage": 100
-        }
-    }
-});
+    $('#panel').html("<div>hi</div>");
+    renderDemoAge();
 }
 
 function demoRace() {
-    // console.log("inside demog()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=demographics'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
+    renderDemoRace();
 }
 
 function demoGender() {
-    // console.log("inside demog()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=demographics'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
+    renderDemoGender();
 }
 
 function income() {

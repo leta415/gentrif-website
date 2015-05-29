@@ -224,7 +224,15 @@
             <ul>
                 <li id='overviewButton' class='active'><a href='javascript:overview();'><span>Overview</span></a></li>
                 <li id='mapButton'><a href='javascript:map();'><span>Map</span></a></li>
-                <li id='demographicsAButton'><a href='javascript:demoAge();'><span>Demographics- Age</span></a></li>
+                <li id='demographicsAButton'>
+                    <a href='javascript:demoAge();'>
+                        <span>Demographics- Age
+                           <!-- <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownmenu" data-toggle="dropdown" aria-expanded="true">City<span class="caret"></span></button>
+                            </div>-->
+                        </span>
+                    </a>
+                </li>
                 <li id='demographicsRButton'><a href='javascript:demoRace();'><span>Demographics- Race</span></a></li>
                 <li id='demographicsGButton'><a href='javascript:demoGender();'><span>Demographics- Gender</span></a></li>
                 <li id='incomeButton'><a href='javascript:income();'><span>Median Household Income</span></a></li>
@@ -236,7 +244,6 @@
         <!-- Data visualization panel -->
         <!-- <div id="spinnerdiv"><canvas id="spinner"></canvas></div> -->
         <div class="col-sm-9 col-md-9" id="panel">
-
         </div>
 
     </div>
@@ -491,6 +498,7 @@
 
     <script src="/javascripts/scripts.js"></script>
     <script src="/javascripts/education.js"></script>
+    <script src="/javascripts/demographics.js"></script>
     <script src="/javascripts/dataPanels.js"></script>
   </body>
 </html>
