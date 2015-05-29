@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
+var _ = require('underscore');
 
 /*
   GET demographics data (percentages of age, gender, race for each region).
@@ -201,8 +202,9 @@ router.get('/education', function (req, res) {
     client.query(query, function(err, result) {
       // return the client to the connection pool for other requests to reuse
       done();
-      console.log(result.rows);
-      res.json(result.rows);
+      var passBackArray = _.sortBy(result.rows, 'Area');
+      console.log(passBackArray);
+      res.json(passBackArray);
     });
   });
 });

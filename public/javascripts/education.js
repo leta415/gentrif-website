@@ -47,8 +47,8 @@ function renderEducation() {
       .attr('class', 'tooltip')
       .offset([-10, 0])
       .html(function(d) {
-        return "<div><strong>Area:</strong> <span style='color: steelblue;'>" + d.Area + "</span></div>"
-              + "<div><strong>Total Degrees:</strong> <span style='color: steelblue;'>" + d.sum + "</span></div>";
+        return "<div><strong style='color: steelblue;'>" + d.sum + "</strong> people in <strong style='color: steelblue;'>" 
+                  + d.Area + "</strong></div><div> with Bachelor's degree or higher</div>";
       });
 
     svg.call(tip);
@@ -97,7 +97,7 @@ function renderEducation() {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Number of Photos");
+        .text("Population with Bachelor's Degree or Higher");
 
         // ajaxLoader.hide();
 
@@ -188,6 +188,6 @@ function renderEducation() {
               .selectAll("g")
               .delay(delay);
         }
-    });
+    }); // end of d3.json call
 
 }  //end of renderEducation()
