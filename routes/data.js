@@ -160,13 +160,14 @@ router.get('/income', function (req, res) {
   pg.connect(conString, function(err, client, done) {
     if(err) return console.log(err);
 
-    var query = 'SELECT \"Area\", \"Median Household Income\" FROM hhsa_san_diego_demographics_median_income_2012_norm';
+    var query = 'SELECT \"Area\", \"Median Household Income\" AS income FROM hhsa_san_diego_demographics_median_income_2012_norm';
     client.query(query, function(err, result) {
       // return the client to the connection pool for other requests to reuse
-      done();
-
-      res.writeHead("200", {'content-type': 'application/json'});
-      res.end(JSON.stringify(result));
+      // done();
+      var passBackArray = _.sortBy(result.rows, 'Area');
+      res.json(passBackArray);
+      // res.writeHead("200", {'content-type': 'application/json'});
+      // res.end(JSON.stringify(result));
     });
   });
 });

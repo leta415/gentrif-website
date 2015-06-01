@@ -58,8 +58,9 @@ function demoGender() {
 
 function income() {
     // console.log("inside income()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=household+income'>";
-    $('#panel').html(htmlString);
+    //var htmlString = "<img src='//placehold.it/1000x462&text=household+income'>";
+    $('#panel').html('');
+    renderIncome();
 }
 
 function homeval() {
