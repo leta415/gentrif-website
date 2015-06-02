@@ -31,7 +31,7 @@ var hscale  = scale*width  / (bounds[1][0] - bounds[0][0]);
 var vscale  = scale*height / (bounds[1][1] - bounds[0][1]);
 var scale   = (hscale < vscale) ? hscale : vscale;
 var offset  = [width + margin - (bounds[0][0] + bounds[1][0])/2,
-                  height + margin - (bounds[0][1] + bounds[1][1])/2];  
+                  height - (bounds[0][1] + bounds[1][1])/2];  
 
 projection = d3.geo.mercator().center(center)
         .scale(scale).translate(offset);
