@@ -1,0 +1,38 @@
+#map {
+  text-align: center;
+}
+
+.subunit {
+  stroke: white;
+  stroke-width: 0.25px;
+  fill: grey;
+}
+
+.place-label {
+  fill: white;
+}
+
+/*        .subunit.272875 { fill: #F00; }
+.subunit.272758 { fill: #0F0; }
+.subunit.268075 { fill: #00F; }
+.subunit.276196 { fill: #888; }*/
+/*.subunit.IRL { display: none; }*/
+
+/*.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.subunit-boundary.IRL {
+  stroke: #aaa;
+}
+
+.subunit-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}*/

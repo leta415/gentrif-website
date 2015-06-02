@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "Central San Diego", "ID": 1 }, "geometry": { "type": "Point", "coordinates": [-117.091043, 32.765678] } },
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "Coastal", "ID": 2 }, "geometry": { "type": "Point", "coordinates": [-117.270556, 32.824235] } },
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "Del Mar-Mira Mesa", "ID": 3 }, "geometry": { "type": "Point", "coordinates": [-117.188547, 32.931812] } },
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "Kearny Mesa", "ID": 4 }, "geometry": { "type": "Point", "coordinates": [-117.140314, 32.828320] } },
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "North San Diego", "ID": 5 }, "geometry": { "type": "Point", "coordinates": [-117.170929, 32.754606] } },
+{ "type": "Feature", "properties": { "STATE": "CA", "COUNTY": "San Diego", "CITY": "San Diego", "NAME": "University", "ID": 7 }, "geometry": { "type": "Point", "coordinates": [-117.148848, 32.756879] } }
+
+]
+}
