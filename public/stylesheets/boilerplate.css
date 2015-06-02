@@ -146,6 +146,19 @@ section {
   font-family: 'Bitter', serif;
 }
 
+.gentrification {
+  font-size: 6em;
+}
+
+#in {
+  font-style: italic;
+}
+
+.intro {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 #section4 {
   background-color: #f6f6f6;
   color:#444;
@@ -153,6 +166,19 @@ section {
 
 #section2 {
   background-color: #fff;
+}
+
+.banner {
+  width: 130%;
+  background-color: #f44d3c;
+  color: #fff;
+  margin-left: -2em;
+  margin-right: 0;
+}
+  
+
+#about {
+  margin-left: 1.5em;
 }
 
 #section3 {
