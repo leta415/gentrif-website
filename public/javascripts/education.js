@@ -1,5 +1,6 @@
 // Function to get education data and render the data visualization on the panel
 function renderEducation() {
+    $('#panel').html('');
 
     // var opts = {
     //     size: 72,           // Width and height of the spinner
@@ -57,6 +58,7 @@ function renderEducation() {
 
     //get json object which contains areas corresponding with their total number of bach and master degrees
     d3.json('/data/education', function(error, data) {
+
       // console.log("type check: " + typeof data[0].sum);
       
       // a flag used to keep track of whether or not to sort or unsort the bars. right now there is no UI for sorting yet.
@@ -109,8 +111,8 @@ function renderEducation() {
         .attr("x", function(d) { return scaleX(d.Area); })
         .attr("width", scaleX.rangeBand())
         .attr("y", function(d) {
-          console.log(d.sum)
-          console.log(scaleY(d.sum)) 
+          // console.log(d.sum)
+          // console.log(scaleY(d.sum)) 
           return scaleY(d.sum); 
         })
         .attr("height", function(d) { return height - scaleY(d.sum); })

@@ -204,7 +204,7 @@ router.get('/education', function (req, res) {
       // return the client to the connection pool for other requests to reuse
       done();
       var passBackArray = _.sortBy(result.rows, 'Area');
-      console.log(passBackArray);
+      // console.log(passBackArray);
       res.json(passBackArray);
     });
   });
@@ -229,7 +229,7 @@ router.get('/', function (req, res) {
     client.query(query, function(err, result) {
       // return the client to the connection pool for other requests to reuse
       done();
-      console.log(result.rows);
+      // console.log(result.rows);
       res.json(result.rows);
     });
   });
