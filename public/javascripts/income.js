@@ -1,10 +1,6 @@
 // Function to get education data and render the data visualization on the panel
 function renderIncome() {
-<<<<<<< HEAD
-
-=======
     $('#panel').html('');
->>>>>>> 86f2fa604556cb17c31ce01ffdc6d0a0753f24fa
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
@@ -99,11 +95,7 @@ function renderIncome() {
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
-<<<<<<< HEAD
-        .attr("y", 6)
-=======
         .attr("y", 2)
->>>>>>> 86f2fa604556cb17c31ce01ffdc6d0a0753f24fa
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("Median Household Income");
