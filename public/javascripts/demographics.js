@@ -202,7 +202,7 @@ function renderDemoGender() {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
         $('#panel').html('');
-        console.log(data);
+        // console.log(data);
         var city = data.rows[0].Area;
         var genders = data.rows[0].Gender;
         $.each(genders, function(i, val){

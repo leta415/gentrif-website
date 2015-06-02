@@ -28,50 +28,33 @@ function mouseLeaveDataButton() {}
 
 // Set up data visualization change for click or hover
 function overview() {
-    // console.log("inside overview()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=overview'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
 }
 
 function map() {
-    // console.log("inside map()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=map'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
 }
 
 function demoAge() {
-    // console.log("inside demog()");
-    //var htmlString = "<img src='//placehold.it/1000x462&text=demographics'>";
-    // $('#panel').html("<div>hi</div>");
     renderDemoAge();
 }
 
 function demoRace() {
-    // $('#panel').html('');
     renderDemoRace();
 }
 
 function demoGender() {
-    // $('#panel').html('');
     renderDemoGender();
 }
 
 function income() {
-    // console.log("inside income()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=household+income'>";
-    $('#panel').html(htmlString);
+    renderIncome();
 }
 
 function homeval() {
-    // console.log("inside homeval()");
-    var htmlString = "<img src='//placehold.it/1000x462&text=home+values'>";
-    $('#panel').html(htmlString);
+    $('#panel').html('');
 }
 
-function bachdeg() {
-    // console.log("inside bachdeg()");
-    $('#panel').html('');
+function bachdeg() {    
     renderEducation();
-    // var htmlString = "<img src='//placehold.it/1000x462&text=bachelors+degrees'>";
-    // $('#panel').html(htmlString);
 }

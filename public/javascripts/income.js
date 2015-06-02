@@ -1,6 +1,10 @@
 // Function to get education data and render the data visualization on the panel
 function renderIncome() {
+<<<<<<< HEAD
 
+=======
+    $('#panel').html('');
+>>>>>>> 86f2fa604556cb17c31ce01ffdc6d0a0753f24fa
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
@@ -58,6 +62,7 @@ function renderIncome() {
     //get json object which contains areas corresponding with their total number of bach and master degrees
     d3.json('/data/income', function(error, data) {
       console.log(data);
+      // console.log(data);
       // console.log("type check: " + typeof data[0].income);
       
       // a flag used to keep track of whether or not to sort or unsort the bars. right now there is no UI for sorting yet.
@@ -94,7 +99,11 @@ function renderIncome() {
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
+<<<<<<< HEAD
         .attr("y", 6)
+=======
+        .attr("y", 2)
+>>>>>>> 86f2fa604556cb17c31ce01ffdc6d0a0753f24fa
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("Median Household Income");
