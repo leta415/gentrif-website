@@ -1,10 +1,19 @@
 /*** pie chart for demographics - age ***/
+var index = -1;
 function renderDemoAge(element, canvasWidth) {
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
         $(element).html('');
-        var city = data.rows[0].Area;
-        var ages = data.rows[0].Age;
+        var i = data.rows.length;
+        
+        while( i--){
+            if(data.rows[i].Area == 'North SD'){
+                index = i;
+                break;
+            }
+        }
+        var city = data.rows[index].Area;
+        var ages = data.rows[index].Age;
         $.each(ages, function(i, val){
             values.push(val);
         });
@@ -105,8 +114,8 @@ function renderDemoRace(element, canvasWidth) {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
         $(element).html('');
-        var city = data.rows[0].Area;
-        var races = data.rows[0].Race;
+        var city = data.rows[index].Area;
+        var races = data.rows[index].Race;
         $.each(races, function(i, val){
             values.push(val);
         });
@@ -203,8 +212,8 @@ function renderDemoGender(element, canvasWidth) {
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
         $(element).html('');
         // console.log(data);
-        var city = data.rows[0].Area;
-        var genders = data.rows[0].Gender;
+        var city = data.rows[index].Area;
+        var genders = data.rows[index].Gender;
         $.each(genders, function(i, val){
             values.push(val);
         });
