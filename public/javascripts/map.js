@@ -52,14 +52,35 @@ svg.append("path")
     .attr("d", path);
     // .attr("d", d3.geo.path().projection(d3.geo.mercator()));
 
-// give each country its own path element so they can each have different properties (i.e. color)
+// give each area its own path element so they can each have different properties (i.e. color)
 svg.selectAll(".subunit")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
-    .attr("class", function(d) {return "subunit " + d.id; })
+    .attr("class", function(d) {return "subunit " + d.properties.id; })
     .attr("d", path)
     .on('mouseover', tip.show)
-    .on('mouseout', tip.hide);
+    .on('mouseout', tip.hide)
+    .on('click', function(d) {
+      // Age data
+      renderDemoAge('#age-div', 300);
+
+      // Gender data
+      renderDemoGender("#gender-div", 300);
+
+      // Race data
+      renderDemoRace("#race-div", 300);
+
+      // Home value data
+      var homevalueHtmlStr = "$XXXXX is the median household income in " + d.properties.name + ".";
+      $("#homevalue-div").html(homevalueHtmlStr);
+
+      // Income data
+      
+
+      // Education data
+      var educationHtmlStr = "XXXXXX people in " + d.properties.name + " have a Bachelor's Degree or higher.";
+      $("#education-div").html(educationHtmlStr);  
+    });
 
 // The England-Scotland and England-Wales borders are interior boundaries. We can exclude Ireland’s
 // border with Northern Ireland by also filtering on id
@@ -76,50 +97,15 @@ svg.selectAll(".subunit")
 ///////////// End display boundaries //////////////
 
 
-////////// Display places //////////////
-
-// Draws a dot/circle for each place
-// svg.append("path")
-//     .datum(topojson.feature(sd, sd.objects.mysdplaces))
-//     .attr("d", path)
-//     .attr("class", "place");
-
-// Place labels
-// svg.selectAll(".place-label")
-//     .data(topojson.feature(sd, sd.objects.mysdplaces).features)
-//   .enter().append("text")
-//     .attr("class", function(d) {return "place-label id" + d.properties.id; })
-//     .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-//     .attr("dy", ".35em")
-//     .text(function(d) { return d.properties.name; });
-
-// right-aligned labels on the left side of the map, and left-aligned labels on the right side of the map,
-// here using 1°W as the threshold
-// svg.selectAll(".place-label")
-//     .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
-//     .style("text-anchor", function(d) { return d.geometry.coordinates[0] > -1 ? "start" : "end"; });
-
-// Fix North San Diego (refer to mysdplaces.json to find id)
-// svg.selectAll(".place-label.id5")
-//     .attr("y", 4);
-
-// // Fix University
-// svg.selectAll(".place-label.id7")
-//     .attr("x", 65)
-//     .attr("y", 8);
-
-// // Fix Central San Diego
-// svg.selectAll(".place-label.id1")
-//     .attr("y", -3);
 
 // Country labels
-svg.selectAll(".subunit-label")
-    .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
-  .enter().append("text")
-    .attr("class", function(d) { return "subunit-label " + d.properties.id; })
-    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-    .attr("dy", ".35em")
-    .text(function(d) { return d.properties.name; });
+// svg.selectAll(".subunit-label")
+//     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
+//   .enter().append("text")
+//     .attr("class", function(d) { return "subunit-label " + d.properties.id; })
+//     .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+//     .attr("dy", ".35em")
+//     .text(function(d) { return d.properties.name; });
 ///////// End display places /////////////
 
 });

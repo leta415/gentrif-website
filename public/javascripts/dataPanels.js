@@ -1,4 +1,4 @@
-$(overview());
+// $(overview());
 $($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
 
 // Set up hover for data buttons
@@ -27,24 +27,16 @@ function mouseLeaveDataButton() {}
 
 
 // Set up data visualization change for click or hover
-function overview() {
-    $('#panel').html('');
-}
-
-function map() {
-    $('#panel').html('');
-}
-
 function demoAge() {
-    renderDemoAge();
+    renderDemoAge('#panel', 590);
 }
 
 function demoRace() {
-    renderDemoRace();
+    renderDemoRace('#panel', 590);
 }
 
 function demoGender() {
-    renderDemoGender();
+    renderDemoGender('#panel', 590);
 }
 
 function income() {

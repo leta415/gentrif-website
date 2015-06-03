@@ -1,15 +1,15 @@
 /*** pie chart for demographics - age ***/
-function renderDemoAge() {
+function renderDemoAge(element, canvasWidth) {
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
-        $('#panel').html('');
+        $(element).html('');
         var city = data.rows[0].Area;
         var ages = data.rows[0].Age;
         $.each(ages, function(i, val){
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
                 "text": city + " Age Groups",
@@ -19,7 +19,7 @@ function renderDemoAge() {
             }
         },
         "size": {
-            "canvasWidth": 590,
+            "canvasWidth": canvasWidth,
             "pieOuterRadius": "87%"
         },
         "data": {
@@ -101,17 +101,17 @@ function renderDemoAge() {
 }
 
 /*** pie chart for demographics - race ***/
-function renderDemoRace() {
+function renderDemoRace(element, canvasWidth) {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
-        $('#panel').html('');
+        $(element).html('');
         var city = data.rows[0].Area;
         var races = data.rows[0].Race;
         $.each(races, function(i, val){
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
                 "text": city + " Race Groups",
@@ -121,7 +121,7 @@ function renderDemoRace() {
             }
         },
         "size": {
-            "canvasWidth": 590,
+            "canvasWidth": canvasWidth,
             "pieOuterRadius": "87%"
         },
         "data": {
@@ -198,10 +198,10 @@ function renderDemoRace() {
 }
 
 /*** pie chart for demographics - gender ***/
-function renderDemoGender() {
+function renderDemoGender(element, canvasWidth) {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
-        $('#panel').html('');
+        $(element).html('');
         // console.log(data);
         var city = data.rows[0].Area;
         var genders = data.rows[0].Gender;
@@ -209,17 +209,17 @@ function renderDemoGender() {
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
-                "text": city + " Race Groups",
+                "text": city + " Gender Groups",
                 "fontSize": 24,
                 "font": "open sans",
                 "color": "#c43d3d"
             }
         },
         "size": {
-            "canvasWidth": 590,
+            "canvasWidth": canvasWidth,
             "pieOuterRadius": "87%"
         },
         "data": {
