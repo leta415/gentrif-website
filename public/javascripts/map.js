@@ -1,9 +1,19 @@
 // var width = 960, height = 1160;
 var width = 400, height = 700;
 var margin = 100;
+
+var tip = d3.tip()
+  .attr('class', 'tooltip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<span style='color:red'>" + d.properties.name + "</span>";
+  });
+
 var svg = d3.select("#map").append("svg")
           .attr("width", width + margin)
           .attr("height", height + margin);
+
+svg.call(tip);
 
 d3.json("/json/mysd.json", function(error, sd) {
 if (error) return console.error(error);
@@ -31,7 +41,7 @@ var hscale  = scale*width  / (bounds[1][0] - bounds[0][0]);
 var vscale  = scale*height / (bounds[1][1] - bounds[0][1]);
 var scale   = (hscale < vscale) ? hscale : vscale;
 var offset  = [width + margin - (bounds[0][0] + bounds[1][0])/2,
-                  height - (bounds[0][1] + bounds[1][1])/2];  
+                  height - (bounds[0][1] + bounds[1][1])/2];
 
 projection = d3.geo.mercator().center(center)
         .scale(scale).translate(offset);
@@ -47,9 +57,11 @@ svg.selectAll(".subunit")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
     .attr("class", function(d) {return "subunit " + d.id; })
-    .attr("d", path);
+    .attr("d", path)
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide);
 
-// The England-Scotland and England-Wales borders are interior boundaries. We can exclude Ireland’s 
+// The England-Scotland and England-Wales borders are interior boundaries. We can exclude Ireland’s
 // border with Northern Ireland by also filtering on id
 // svg.append("path")
 //     .datum(topojson.mesh(sd, sd.objects.subunits, function(a, b) { return a !== b && a.id !== "IRL"; }))
@@ -81,7 +93,7 @@ svg.selectAll(".subunit")
 //     .attr("dy", ".35em")
 //     .text(function(d) { return d.properties.name; });
 
-// right-aligned labels on the left side of the map, and left-aligned labels on the right side of the map, 
+// right-aligned labels on the left side of the map, and left-aligned labels on the right side of the map,
 // here using 1°W as the threshold
 // svg.selectAll(".place-label")
 //     .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
@@ -101,13 +113,13 @@ svg.selectAll(".subunit")
 //     .attr("y", -3);
 
 // Country labels
-svg.selectAll(".subunit-label")
-    .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
-  .enter().append("text")
-    .attr("class", function(d) { return "subunit-label " + d.id; })
-    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-    .attr("dy", ".35em")
-    .text(function(d) { return d.properties.name; });
+// svg.selectAll(".subunit-label")
+//     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
+//   .enter().append("text")
+//     .attr("class", function(d) { return "subunit-label " + d.id; })
+//     .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+//     .attr("dy", ".35em")
+//     .text(function(d) { return d.properties.name; });
 ///////// End display places /////////////
 
 });
