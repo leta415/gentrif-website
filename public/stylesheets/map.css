@@ -8,6 +8,10 @@
   fill: grey;
 }
 
+.subunit:hover {
+  fill-opacity: 70%;
+}
+
 .place-label {
   fill: white;
 }
