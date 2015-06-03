@@ -1,6 +1,13 @@
-// Function to get education data and render the data visualization on the panel
-function renderEducation() {
-    $('#panel').html('');
+/* 
+Function to get education data and render the data visualization on the panel.
+
+Paramters:
+  elementStr - the html element to append the data visualization to
+  svgWidth - width of the svg
+  svgHeight - height of the svg
+*/
+function renderEducation(elementStr, svgWidth, svgHeight) {
+    $(elementStr).html('');
 
     // var opts = {
     //     size: 72,           // Width and height of the spinner
@@ -13,8 +20,8 @@ function renderEducation() {
     // ajaxLoader.show();
 
     var margin = {top: 20, right: 20, bottom: 120, left: 40};
-    var width = 960 - margin.left - margin.right;
-    var height = 462 - margin.top - margin.bottom;
+    var width = svgWidth - margin.left - margin.right;
+    var height = svgHeight - margin.top - margin.bottom;
 
     //define scale of x to be from 0 to width of SVG, with .1 padding in between
     var scaleX = d3.scale.ordinal()
@@ -33,7 +40,7 @@ function renderEducation() {
       .orient("left");
 
     //create svg
-    var svg = d3.select("#panel").append("svg")
+    var svg = d3.select(elementStr).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")

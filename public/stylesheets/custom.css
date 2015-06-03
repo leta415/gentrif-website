@@ -94,3 +94,25 @@
   top: 100%;
   left: 0;
 }
+
+.subdata {
+  border: white dashed 2px;
+}
+
+#left-map-data {
+  border: white solid 2px;
+  color: white;
+  height: 100%;
+}
+
+#middle-map-data {
+  border: white solid 2px;
+  color: white;
+}
+
+#right-map-data {
+  border: white solid 2px;
+  color: white;
+  height: 100%;
+}
+

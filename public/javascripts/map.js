@@ -46,7 +46,7 @@ svg.append("path")
 svg.selectAll(".subunit")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
-    .attr("class", function(d) {return "subunit " + d.id; })
+    .attr("class", function(d) {return "subunit " + d.properties.id; })
     .attr("d", path);
 
 // The England-Scotland and England-Wales borders are interior boundaries. We can exclude Ireland’s 
@@ -104,7 +104,7 @@ svg.selectAll(".subunit")
 svg.selectAll(".subunit-label")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
   .enter().append("text")
-    .attr("class", function(d) { return "subunit-label " + d.id; })
+    .attr("class", function(d) { return "subunit-label " + d.properties.id; })
     .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
     .attr("dy", ".35em")
     .text(function(d) { return d.properties.name; });
