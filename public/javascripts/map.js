@@ -10,7 +10,7 @@ if (error) return console.error(error);
 console.log(sd);
 
 ////////////// Display boundaries /////////////
-var sdgeo = topojson.feature(sd, sd.objects.sdgeo);
+var sdgeo = topojson.feature(sd, sd.objects.zillowneighborhoodsca);
 
 var center = d3.geo.centroid(sdgeo);
 var scale  = 150;
@@ -44,7 +44,7 @@ svg.append("path")
 
 // give each country its own path element so they can each have different properties (i.e. color)
 svg.selectAll(".subunit")
-    .data(topojson.feature(sd, sd.objects.sdgeo).features)
+    .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
     .attr("class", function(d) {return "subunit " + d.id; })
     .attr("d", path);
@@ -67,47 +67,47 @@ svg.selectAll(".subunit")
 ////////// Display places //////////////
 
 // Draws a dot/circle for each place
-svg.append("path")
-    .datum(topojson.feature(sd, sd.objects.mysdplaces))
-    .attr("d", path)
-    .attr("class", "place");
+// svg.append("path")
+//     .datum(topojson.feature(sd, sd.objects.mysdplaces))
+//     .attr("d", path)
+//     .attr("class", "place");
 
 // Place labels
-svg.selectAll(".place-label")
-    .data(topojson.feature(sd, sd.objects.mysdplaces).features)
-  .enter().append("text")
-    .attr("class", function(d) {return "place-label id" + d.properties.id; })
-    .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-    .attr("dy", ".35em")
-    .text(function(d) { return d.properties.name; });
+// svg.selectAll(".place-label")
+//     .data(topojson.feature(sd, sd.objects.mysdplaces).features)
+//   .enter().append("text")
+//     .attr("class", function(d) {return "place-label id" + d.properties.id; })
+//     .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
+//     .attr("dy", ".35em")
+//     .text(function(d) { return d.properties.name; });
 
 // right-aligned labels on the left side of the map, and left-aligned labels on the right side of the map, 
 // here using 1°W as the threshold
-svg.selectAll(".place-label")
-    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
-    .style("text-anchor", function(d) { return d.geometry.coordinates[0] > -1 ? "start" : "end"; });
+// svg.selectAll(".place-label")
+//     .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
+//     .style("text-anchor", function(d) { return d.geometry.coordinates[0] > -1 ? "start" : "end"; });
 
 // Fix North San Diego (refer to mysdplaces.json to find id)
-svg.selectAll(".place-label.id5")
-    .attr("y", 4);
+// svg.selectAll(".place-label.id5")
+//     .attr("y", 4);
 
-// Fix University
-svg.selectAll(".place-label.id7")
-    .attr("x", 65)
-    .attr("y", 8);
+// // Fix University
+// svg.selectAll(".place-label.id7")
+//     .attr("x", 65)
+//     .attr("y", 8);
 
-// Fix Central San Diego
-svg.selectAll(".place-label.id1")
-    .attr("y", -3);
+// // Fix Central San Diego
+// svg.selectAll(".place-label.id1")
+//     .attr("y", -3);
 
 // Country labels
-// svg.selectAll(".subunit-label")
-//     .data(topojson.feature(sd, sd.objects.subunits).features)
-//   .enter().append("text")
-//     .attr("class", function(d) { return "subunit-label " + d.id; })
-//     .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-//     .attr("dy", ".35em")
-//     .text(function(d) { return d.properties.name; });
+svg.selectAll(".subunit-label")
+    .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
+  .enter().append("text")
+    .attr("class", function(d) { return "subunit-label " + d.id; })
+    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+    .attr("dy", ".35em")
+    .text(function(d) { return d.properties.name; });
 ///////// End display places /////////////
 
 });

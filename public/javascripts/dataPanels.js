@@ -1,5 +1,5 @@
 $(overview());
-$($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
+// $($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
 
 // Set up hover for data buttons
 function mouseEnterDataButton() {
