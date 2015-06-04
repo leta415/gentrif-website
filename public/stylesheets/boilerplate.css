@@ -166,6 +166,7 @@ section {
 
 #section2 {
   background-color: #fff;
+  padding-top: 0;
 }
 
 .banner {
@@ -174,11 +175,44 @@ section {
   color: #fff;
   margin-left: -2%;
   margin-right: 0;
-}
-  
+}  
 
 #about {
   margin-left: 1.5em;
+}
+
+.what {
+  line-height: 1px;
+}
+
+#city {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: block;
+}
+
+#blue {
+  background-color: blue;
+}
+
+.left-container {
+  background-color:#f44d3c; 
+    padding-top:70px;
+    padding-bottom:50px;
+    min-height:100%;
+
+}
+
+.right-container {
+  background-color: black;
+  padding-top:70px;
+    padding-bottom:50px;
+    min-height:100%;
+}
+
+.content {
+  height: 100%;
 }
 
 #section3 {
@@ -191,7 +225,7 @@ section {
 }
 
 #section6 {
-    background-color: #eee;
+  background-color: #eee;
   min-height:130px;
   padding-top:40px;
   padding-bottom:40px;
