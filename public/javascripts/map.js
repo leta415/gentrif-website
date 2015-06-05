@@ -116,23 +116,24 @@ svg.selectAll(".subunit")
       if ($.inArray(d.properties.name, delphiAreas) == -1) return;
       // console.log("found " + d.properties.name);
       // Age data
-      renderDemoAge('#age-div', 300);
+      renderDemoAge('#age-div', 300, d.properties.name);
 
       // Gender data
-      renderDemoGender("#gender-div", 300);
+      renderDemoGender("#gender-div", 300, d.properties.name);
 
       // Race data
-      renderDemoRace("#race-div", 300);
+      renderDemoRace("#race-div", 300, d.properties.name);
 
       // Home value data
-      var homevalueHtmlStr = "$XXXXX is the median household income in " + d.properties.name + ".";
-      $("#homevalue-div").html(homevalueHtmlStr);
+      var homedata = renderHome("#homevalue-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";
+      $("homevalue-div").html(homedata);
 
       // Income data
-      
+      var incomedata = renderIncome("#income-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";
+      $("#income-div").html(incomedata);
 
       // Education data
-      var educationHtmlStr = "XXXXXX people in " + d.properties.name + " have a Bachelor's Degree or higher.";
+      var educationHtmlStr = renderEducation("#education-div", d.properties.name);//"XXXXXX people in " + d.properties.name + " have a Bachelor's Degree or higher.";
       $("#education-div").html(educationHtmlStr);  
     });
 

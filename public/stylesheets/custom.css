@@ -1,3 +1,7 @@
+.homeTitle {
+  vertical-align: bottom;
+}
+
 #cssmenu {
   background: #333;
   list-style: none;

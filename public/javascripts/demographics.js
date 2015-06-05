@@ -1,18 +1,19 @@
 /*** pie chart for demographics - age ***/
 var index = -1;
-function renderDemoAge(element, canvasWidth) {
+function renderDemoAge(element, canvasWidth, cityName) {
+   // console.log(cityName);
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
         $(element).html('');
         var i = data.rows.length;
-        
+        //console.log(data);
         while( i--){
-            if(data.rows[i].Area == 'North SD'){
+            if(data.rows[i].Area == cityName){
                 index = i;
                 break;
             }
         }
-        var city = data.rows[index].Area;
+        
         var ages = data.rows[index].Age;
         $.each(ages, function(i, val){
             values.push(val);
@@ -21,7 +22,7 @@ function renderDemoAge(element, canvasWidth) {
        var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
-                "text": city + " Age Groups",
+                "text": cityName + " Age Groups",
                 "fontSize": 24,
                 "font": "open sans",
                 "color": "#c43d3d"
@@ -110,11 +111,10 @@ function renderDemoAge(element, canvasWidth) {
 }
 
 /*** pie chart for demographics - race ***/
-function renderDemoRace(element, canvasWidth) {
+function renderDemoRace(element, canvasWidth, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
         $(element).html('');
-        var city = data.rows[index].Area;
         var races = data.rows[index].Race;
         $.each(races, function(i, val){
             values.push(val);
@@ -207,12 +207,10 @@ function renderDemoRace(element, canvasWidth) {
 }
 
 /*** pie chart for demographics - gender ***/
-function renderDemoGender(element, canvasWidth) {
+function renderDemoGender(element, canvasWidth, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
         $(element).html('');
-        // console.log(data);
-        var city = data.rows[index].Area;
         var genders = data.rows[index].Gender;
         $.each(genders, function(i, val){
             values.push(val);

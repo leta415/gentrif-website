@@ -6,9 +6,21 @@ Paramters:
   svgWidth - width of the svg
   svgHeight - height of the svg
 */
-function renderEducation(elementStr, svgWidth, svgHeight) {
-    $(elementStr).html('');
+function renderEducation(element, cityName) {
+    $(element).html('');
+    var population;
+    $.getJSON('/data/education').done(function(data) {
+        var i = data.length;
+        //console.log(data);
+        while( i--){
 
+            if(data[i].Area == cityName){
+                population = data[i].sum;
+                break;
+            }
+        }
+        $(element).html(population+" people in " + cityName + " have a Bachelor's Degree or higher.");
+    });
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
@@ -18,7 +30,7 @@ function renderEducation(elementStr, svgWidth, svgHeight) {
     // };
     // var ajaxLoader = new AjaxLoader("spinner", opts);
     // ajaxLoader.show();
-
+    /*
     var margin = {top: 20, right: 20, bottom: 120, left: 40};
     var width = svgWidth - margin.left - margin.right;
     var height = svgHeight - margin.top - margin.bottom;
@@ -197,6 +209,6 @@ function renderEducation(elementStr, svgWidth, svgHeight) {
               .selectAll("g")
               .delay(delay);
         }
-    }); // end of d3.json call
+    }); // end of d3.json call*/
 
 }  //end of renderEducation()
