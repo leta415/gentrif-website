@@ -1,3 +1,42 @@
+// We are only using a subset of Zillow neighborhoods that match with the Delphi areas in this array
+var delphiAreas = [
+        "Spring Valley",
+        "Escondido",
+        "Poway",
+        "Miramar",
+        "Oceanside",
+        "Carlsbad",
+        "Fallbrook",
+        "Kearny Mesa",
+        "Peninsula",
+        "Lakeside",
+        "La Mesa",
+        "Pendleton",
+        "South Bay",
+        "El Cajon",
+        "Chula Vista",
+        "Ramona",
+        "Elliott-Navajo",
+        "Laguna-Pine Valley",
+        "San Dieguito",
+        "Alpine",
+        "Lemon Grove",
+        "Mountain Empire",
+        "San Marcos",
+        "Sweetwater",
+        "Del Mar-Mira Mesa",
+        "Coastal",
+        "Santee",
+        "Jamul",
+        "Palomar-Julian",
+        "National City",
+        "Valley Center",
+        "Coronado",
+        "Pauma",
+        "University",
+        "Vista"
+    ];
+
 // var width = 960, height = 1160;
 var width = 400, height = 700;
 var margin = 100;
@@ -52,15 +91,30 @@ svg.append("path")
     .attr("d", path);
     // .attr("d", d3.geo.path().projection(d3.geo.mercator()));
 
+
+
 // give each area its own path element so they can each have different properties (i.e. color)
 svg.selectAll(".subunit")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
     .attr("class", function(d) {return "subunit " + d.properties.id; })
     .attr("d", path)
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide)
+    .on('mouseover', function(d) {
+      if ($.inArray(d.properties.name, delphiAreas) != -1) {
+        console.log("hover found " + d.properties.name);
+        tip.show(d);
+      } else {
+        console.log("hover NOT found " + d.properties.name);
+      }
+    }) 
+    .on('mouseout', function(d) {
+      if ($.inArray(d.properties.name, delphiAreas) != -1) {
+        tip.hide(d);
+      }
+    })
     .on('click', function(d) {
+      if ($.inArray(d.properties.name, delphiAreas) == -1) return;
+      // console.log("found " + d.properties.name);
       // Age data
       renderDemoAge('#age-div', 300);
 
