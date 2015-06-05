@@ -89,14 +89,25 @@ svg.append("path")
     .attr("d", path);
     // .attr("d", d3.geo.path().projection(d3.geo.mercator()));
 
-
-
 // give each area its own path element so they can each have different properties (i.e. color)
 svg.selectAll(".subunit")
     .data(topojson.feature(sd, sd.objects.zillowneighborhoodsca).features)
     .enter().append("path")
-    .attr("class", function(d) {return "subunit " + d.properties.id; })
+    .attr("class", function(d) {
+      if($.inArray(d.properties.name, delphiAreas) != -1){
+        return "subunit highlight"; 
+      }else{
+        return "subunit"; 
+      }
+    })
     .attr("d", path)
+    .style("fill", function(d){
+      if($.inArray(d.properties.name, delphiAreas) != -1){
+        return "#f44d3c";
+      }else{
+        return "grey";
+      }
+    })
     .on('mouseover', function(d) {
       if ($.inArray(d.properties.name, delphiAreas) != -1) {
         // console.log("hover found " + d.properties.name);

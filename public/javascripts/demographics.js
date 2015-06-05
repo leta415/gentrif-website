@@ -71,7 +71,7 @@ function renderDemoAge(element, canvasWidth, canvasHeight, cityName) {
         },
         "labels": {
             "outer": {
-                "pieDistance": 15
+                "pieDistance": 10
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
@@ -92,7 +92,7 @@ function renderDemoAge(element, canvasWidth, canvasHeight, cityName) {
                 "enabled": true
             },
             "truncation": {
-                "enabled": true
+                "enabled": false
             }
         },
         "effects": {

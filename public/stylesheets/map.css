@@ -4,11 +4,11 @@
 
 .subunit {
   stroke: white;
-  stroke-width: 0.25px;
-  fill: grey;
+  stroke-width: 0.50px;
+  /*fill: grey;*/
 }
 
-.subunit:hover {
+.highlight:hover {
   fill-opacity: 70%;
 }
 
