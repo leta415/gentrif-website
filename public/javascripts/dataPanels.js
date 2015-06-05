@@ -1,10 +1,6 @@
 // $(overview());
 $($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
-$(document).ready(function(){
-    demoAge();
-    demoRace();
-    demoGender();
-});
+
 
 // Set up hover for data buttons
 function mouseEnterDataButton() {
@@ -33,15 +29,15 @@ function mouseLeaveDataButton() {}
 
 // Set up data visualization change for click or hover
 function demoAge() {
-    renderDemoAge('#age-div', 590);
+    renderDemoAge('#age-div', 480);
 }
 
 function demoRace() {
-    renderDemoRace('#race-div', 590);
+    renderDemoRace('#race-div', 480);
 }
 
 function demoGender() {
-    renderDemoGender('#gender-div', 590);
+    renderDemoGender('#gender-div', 480);
 }
 
 function income() {
