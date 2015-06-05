@@ -1,6 +1,6 @@
 /*** pie chart for demographics - age ***/
 var index = -1;
-function renderDemoAge(element, canvasWidth, cityName) {
+function renderDemoAge(element, canvasWidth, canvasHeight, cityName) {
    // console.log(cityName);
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
@@ -23,14 +23,16 @@ function renderDemoAge(element, canvasWidth, cityName) {
         "header": {
             "title": {
                 "text": cityName + " Age Groups",
-                "fontSize": 24,
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "100%"
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": null,
+            "pieOuterRadius": "77%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -76,7 +78,7 @@ function renderDemoAge(element, canvasWidth, cityName) {
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 16
+                "fontSize": 12
             },
             "percentage": {
                 "color": "#ffffff",
@@ -111,7 +113,7 @@ function renderDemoAge(element, canvasWidth, cityName) {
 }
 
 /*** pie chart for demographics - race ***/
-function renderDemoRace(element, canvasWidth, city) {
+function renderDemoRace(element, canvasWidth, canvasHeight, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
         $(element).html('');
@@ -124,14 +126,16 @@ function renderDemoRace(element, canvasWidth, city) {
         "header": {
             "title": {
                 "text": city + " Race Groups",
-                "fontSize": 24,
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "100%"
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": "25%",
+            "pieOuterRadius": "77%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -157,7 +161,7 @@ function renderDemoRace(element, canvasWidth, city) {
                     "color": "#a05c56"
                 },
                 {
-                    "label": "Other Race/Ethnicity",
+                    "label": "Other",
                     "value": values[4],
                     "color": "#961919"
                 }
@@ -165,14 +169,14 @@ function renderDemoRace(element, canvasWidth, city) {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 18
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 10
             },
             "percentage": {
                 "color": "#ffffff",
@@ -207,7 +211,7 @@ function renderDemoRace(element, canvasWidth, city) {
 }
 
 /*** pie chart for demographics - gender ***/
-function renderDemoGender(element, canvasWidth, city) {
+function renderDemoGender(element, canvasWidth, canvasHeight, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
         $(element).html('');
@@ -220,14 +224,16 @@ function renderDemoGender(element, canvasWidth, city) {
         "header": {
             "title": {
                 "text": city + " Gender Groups",
-                "fontSize": 24,
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "100%"
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": null,
+            "pieOuterRadius": "80%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -246,14 +252,14 @@ function renderDemoGender(element, canvasWidth, city) {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 17
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 12
             },
             "percentage": {
                 "color": "#ffffff",

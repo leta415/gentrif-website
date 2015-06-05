@@ -11,6 +11,6 @@ function renderHome(element,cityName) {
                 break;
             }
         }
-        $(element).html("$"+home+" is the median home value in " + cityName + ".");
+        $(element).html("<div>Median home value in " + cityName + "</div><div>" + "$" + home + "</div>");
     });
 }

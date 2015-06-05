@@ -112,24 +112,20 @@ svg.selectAll(".subunit")
     })
     .on('click', function(d) {
       if ($.inArray(d.properties.name, delphiAreas) == -1) return;
-      // console.log("found " + d.properties.name);
+
       // Age data
-      renderDemoAge('#age-div', 250, d.properties.name);
-      $('#age-div').attr('font-family', 'inherit');
-      // $('#age-div').addClass("pull-right");
+      renderDemoAge('#age-div', 300, 330, d.properties.name);
+
 
       // Gender data
-      renderDemoGender("#gender-div", 300, d.properties.name);
-      // $('#gender-div').addClass("pull-right");
+      renderDemoGender("#gender-div", 330, 300, d.properties.name);
 
       // Race data
-      renderDemoRace("#race-div", 300, d.properties.name);
-      // $('#race-div').addClass("pull-left");
+      renderDemoRace("#race-div", 330, 330, d.properties.name);
 
       // Home value data
       var homedata = renderHome("#homevalue-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";
       $("homevalue-div").html(homedata);
-      $("homevalue-div").attr('font-family', "'Dosis', sans-serif");
 
       // Income data
       var incomedata = renderIncome("#income-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";

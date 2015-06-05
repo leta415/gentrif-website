@@ -19,7 +19,7 @@ function renderEducation(element, cityName) {
                 break;
             }
         }
-        $(element).html(population+" people in " + cityName + " have a Bachelor's Degree or higher.");
+        $(element).html("<div>Number of people in " + cityName + " with a Bachelor's Degree or higher</div><div>" + population + "</div>");
     });
     // var opts = {
     //     size: 72,           // Width and height of the spinner

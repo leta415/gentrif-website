@@ -10,7 +10,7 @@ function renderIncome(element,cityName) {
                 break;
             }
         }
-        $(element).html(income+" is the median household income in " + cityName + ".");
+        $(element).html("<div>Median household income in " + cityName + "</div><div>" + income + "</div>");
     });
 
 
