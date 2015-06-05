@@ -208,9 +208,9 @@ section {
 footer {
   background-color:#2b2b2b;
     color:#ddd;
-    min-height:100px;
+    /*min-height:80px;
     padding-top:20px;
-    padding-bottom:40px;
+    padding-bottom:40px;*/
 }
 
 footer .nav>li>a {
