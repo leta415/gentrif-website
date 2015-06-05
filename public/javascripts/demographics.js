@@ -29,8 +29,10 @@ function renderDemoAge(element, canvasWidth, cityName) {
             }
         },
         "size": {
+            "canvasHeight": canvasWidth,
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "100%"
+            "pieInnerRadius": 0,
+            "pieOuterRadius": null
         },
         "data": {
             "sortOrder": "label-asc",
@@ -69,7 +71,7 @@ function renderDemoAge(element, canvasWidth, cityName) {
         },
         "labels": {
             "outer": {
-                "pieDistance": 15
+                "pieDistance": 10
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
@@ -90,7 +92,7 @@ function renderDemoAge(element, canvasWidth, cityName) {
                 "enabled": true
             },
             "truncation": {
-                "enabled": true
+                "enabled": false
             }
         },
         "effects": {
