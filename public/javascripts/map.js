@@ -3,7 +3,6 @@ var delphiAreas = [
         "Spring Valley",
         "Escondido",
         "Poway",
-        "Miramar",
         "Oceanside",
         "Carlsbad",
         "Fallbrook",
@@ -31,14 +30,13 @@ var delphiAreas = [
         "Palomar-Julian",
         "National City",
         "Valley Center",
-        "Coronado",
         "Pauma",
         "University",
         "Vista"
     ];
 
 // var width = 960, height = 1160;
-var width = 400, height = 700;
+var width = 350, height = 600;
 var margin = 100;
 
 var tip = d3.tip()
@@ -56,7 +54,7 @@ svg.call(tip);
 
 d3.json("/json/mysd.json", function(error, sd) {
 if (error) return console.error(error);
-console.log(sd);
+// console.log(sd);
 
 ////////////// Display boundaries /////////////
 var sdgeo = topojson.feature(sd, sd.objects.zillowneighborhoodsca);
@@ -101,10 +99,10 @@ svg.selectAll(".subunit")
     .attr("d", path)
     .on('mouseover', function(d) {
       if ($.inArray(d.properties.name, delphiAreas) != -1) {
-        console.log("hover found " + d.properties.name);
+        // console.log("hover found " + d.properties.name);
         tip.show(d);
       } else {
-        console.log("hover NOT found " + d.properties.name);
+        // console.log("hover NOT found " + d.properties.name);
       }
     }) 
     .on('mouseout', function(d) {
@@ -116,17 +114,22 @@ svg.selectAll(".subunit")
       if ($.inArray(d.properties.name, delphiAreas) == -1) return;
       // console.log("found " + d.properties.name);
       // Age data
-      renderDemoAge('#age-div', 300, d.properties.name);
+      renderDemoAge('#age-div', 250, d.properties.name);
+      $('#age-div').attr('font-family', 'inherit');
+      // $('#age-div').addClass("pull-right");
 
       // Gender data
       renderDemoGender("#gender-div", 300, d.properties.name);
+      // $('#gender-div').addClass("pull-right");
 
       // Race data
       renderDemoRace("#race-div", 300, d.properties.name);
+      // $('#race-div').addClass("pull-left");
 
       // Home value data
       var homedata = renderHome("#homevalue-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";
       $("homevalue-div").html(homedata);
+      $("homevalue-div").attr('font-family', "'Dosis', sans-serif");
 
       // Income data
       var incomedata = renderIncome("#income-div",d.properties.name);//"$XXXXX is the median household income in " + d.properties.name + ".";

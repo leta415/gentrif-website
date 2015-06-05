@@ -30,7 +30,7 @@ function renderDemoAge(element, canvasWidth, cityName) {
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "87%"
+            "pieOuterRadius": "100%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -69,14 +69,14 @@ function renderDemoAge(element, canvasWidth, cityName) {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 15
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 16
             },
             "percentage": {
                 "color": "#ffffff",
@@ -131,7 +131,7 @@ function renderDemoRace(element, canvasWidth, city) {
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "87%"
+            "pieOuterRadius": "100%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -227,7 +227,7 @@ function renderDemoGender(element, canvasWidth, city) {
         },
         "size": {
             "canvasWidth": canvasWidth,
-            "pieOuterRadius": "87%"
+            "pieOuterRadius": "100%"
         },
         "data": {
             "sortOrder": "label-asc",

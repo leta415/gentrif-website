@@ -99,24 +99,32 @@
   left: 0;
 }
 
+#education-div {
+  padding-top: 50px;
+  margin-left: -80px;
+  margin-top: 40px;
+}
+
 .subdata {
-  border: white dashed 2px;
+  /*border: white dashed 2px;*/
 }
 
 #left-map-data {
-  border: white solid 2px;
+  /*z-index: 1000000000000000000;*/
+  text-align: right;
+/*  border: white solid 2px;
   color: white;
-  height: 100%;
+  height: 100%;*/
 }
 
 #middle-map-data {
-  border: white solid 2px;
-  color: white;
+  /*z-index: -1;*/
 }
 
 #right-map-data {
-  border: white solid 2px;
+  /*z-index: 5;*/
+/*  border: white solid 2px;
   color: white;
-  height: 100%;
+  height: 100%;*/
 }
 
