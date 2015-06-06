@@ -192,27 +192,39 @@ section {
   display: block;
 }
 
-#blue {
-  background-color: blue;
+#collision {
+  font-style: italic;
+  font-weight: bold;
+  color: #f44d3c;
+  letter-spacing: 2px;
 }
 
-.left-container {
-  background-color:#f44d3c; 
-    padding-top:70px;
-    padding-bottom:50px;
-    min-height:100%;
+.aboutContent {
+  overflow: auto;
+}
+
+#demo {
+  background-color: #5cb85c;
+  overflow: auto;
 
 }
 
-.right-container {
-  background-color: black;
-  padding-top:70px;
-    padding-bottom:50px;
-    min-height:100%;
+#market {
+  background-color: #428bca;
+  overflow: auto;
+
 }
 
-.content {
-  height: 100%;
+#land {
+  background-color: #f0ad4e;
+  overflow: auto;
+
+}
+
+#culture {
+  background-color: #d9534f;
+  overflow: auto;
+  
 }
 
 #section3 {
