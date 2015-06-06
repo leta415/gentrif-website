@@ -192,6 +192,49 @@ section {
   display: block;
 }
 
+#head {
+  margin-left: 2em;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
 #collision {
   font-style: italic;
   font-weight: bold;
@@ -205,25 +248,25 @@ section {
 
 #demo {
   background-color: #5cb85c;
-  overflow: auto;
+  /*overflow: auto;*/
 
 }
 
 #market {
   background-color: #428bca;
-  overflow: auto;
+  /*overflow: auto;*/
 
 }
 
 #land {
   background-color: #f0ad4e;
-  overflow: auto;
+  /*overflow: auto;*/
 
 }
 
 #culture {
   background-color: #d9534f;
-  overflow: auto;
+  /*overflow: auto;*/
   
 }
 
