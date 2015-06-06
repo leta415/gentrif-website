@@ -98,3 +98,56 @@
   top: 100%;
   left: 0;
 }
+
+#age-div {
+  margin-right: -90px;
+}
+
+#homevalue-div {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#education-div {
+  margin-left: -10px;
+  /*padding-top: 50px;*/
+  margin-top: 40px;
+}
+
+#gender-div {
+  margin-top: 40px;
+  margin-right: -120px;
+}
+
+.subdata {
+  /*border: white dashed 2px;*/
+}
+
+#left-map-data {
+  font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  /*z-index: 1000000000000000000;*/
+  text-align: right;
+/*  border: white solid 2px;
+  color: white;
+  height: 100%;*/
+}
+
+#middle-map-data {
+  font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  /*z-index: -1;*/
+}
+
+#right-map-data {
+  font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  /*z-index: 5;*/
+/*  border: white solid 2px;
+  color: white;
+  height: 100%;*/
+}
+
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}

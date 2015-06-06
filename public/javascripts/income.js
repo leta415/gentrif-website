@@ -1,6 +1,19 @@
 // Function to get education data and render the data visualization on the panel
-function renderIncome() {
+function renderIncome(element,cityName) {
     $('#panel').html('');
+    var income;
+    $.getJSON('/data/income').done(function(data) {
+        var i = data.length;
+        while( i--){
+            if(data[i].Area == cityName){
+                income = data[i].income;
+                break;
+            }
+        }
+        $(element).html("<div>Median household income in " + cityName + "</div><div>" + income + "</div>");
+    });
+
+
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
@@ -11,7 +24,7 @@ function renderIncome() {
     // var ajaxLoader = new AjaxLoader("spinner", opts);
     // ajaxLoader.show();
 
-    var margin = {top: 20, right: 20, bottom: 120, left: 40};
+   /* var margin = {top: 20, right: 20, bottom: 120, left: 40};
     var width = 960 - margin.left - margin.right;
     var height = 462 - margin.top - margin.bottom;
 
@@ -54,7 +67,7 @@ function renderIncome() {
     svg.call(tip);
 
 
-
+    
     //get json object which contains areas corresponding with their total number of bach and master degrees
     d3.json('/data/income', function(error, data) {
       console.log(data);
@@ -187,6 +200,6 @@ function renderIncome() {
               .selectAll("g")
               .delay(delay);
         }
-    }); // end of d3.json call
+    }); // end of d3.json call */
 
 }  //end of renderIncome()

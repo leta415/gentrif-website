@@ -1,26 +1,38 @@
 /*** pie chart for demographics - age ***/
-function renderDemoAge() {
+var index = -1;
+function renderDemoAge(element, canvasWidth, canvasHeight, cityName) {
+   // console.log(cityName);
     var values = [];
     $.getJSON('/data/demographics?filter=age').done(function(data) {
-        $('#panel').html('');
-        var city = data.rows[0].Area;
-        var ages = data.rows[0].Age;
+        $(element).html('');
+        var i = data.rows.length;
+        //console.log(data);
+        while( i--){
+            if(data.rows[i].Area == cityName){
+                index = i;
+                break;
+            }
+        }
+        
+        var ages = data.rows[index].Age;
         $.each(ages, function(i, val){
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
-                "text": city + " Age Groups",
-                "fontSize": 24,
+                "text": cityName + " Age Groups",
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
-            "canvasWidth": 590,
-            "pieOuterRadius": "87%"
+            "canvasWidth": canvasWidth,
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": null,
+            "pieOuterRadius": "77%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -59,14 +71,14 @@ function renderDemoAge() {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 10
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 12
             },
             "percentage": {
                 "color": "#ffffff",
@@ -80,7 +92,7 @@ function renderDemoAge() {
                 "enabled": true
             },
             "truncation": {
-                "enabled": true
+                "enabled": false
             }
         },
         "effects": {
@@ -101,28 +113,29 @@ function renderDemoAge() {
 }
 
 /*** pie chart for demographics - race ***/
-function renderDemoRace() {
+function renderDemoRace(element, canvasWidth, canvasHeight, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=race').done(function(data) {
-        $('#panel').html('');
-        var city = data.rows[0].Area;
-        var races = data.rows[0].Race;
+        $(element).html('');
+        var races = data.rows[index].Race;
         $.each(races, function(i, val){
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
                 "text": city + " Race Groups",
-                "fontSize": 24,
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
-            "canvasWidth": 590,
-            "pieOuterRadius": "87%"
+            "canvasWidth": canvasWidth,
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": "25%",
+            "pieOuterRadius": "77%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -148,7 +161,7 @@ function renderDemoRace() {
                     "color": "#a05c56"
                 },
                 {
-                    "label": "Other Race/Ethnicity",
+                    "label": "Other",
                     "value": values[4],
                     "color": "#961919"
                 }
@@ -156,14 +169,14 @@ function renderDemoRace() {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 18
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 10
             },
             "percentage": {
                 "color": "#ffffff",
@@ -198,29 +211,29 @@ function renderDemoRace() {
 }
 
 /*** pie chart for demographics - gender ***/
-function renderDemoGender() {
+function renderDemoGender(element, canvasWidth, canvasHeight, city) {
     var values = [];
     $.getJSON('/data/demographics?filter=gender').done(function(data) {
-        $('#panel').html('');
-        // console.log(data);
-        var city = data.rows[0].Area;
-        var genders = data.rows[0].Gender;
+        $(element).html('');
+        var genders = data.rows[index].Gender;
         $.each(genders, function(i, val){
             values.push(val);
         });
 
-       var pie = new d3pie("panel", {
+       var pie = new d3pie(element.substring(1), {
         "header": {
             "title": {
-                "text": city + " Race Groups",
-                "fontSize": 24,
+                "text": city + " Gender Groups",
+                "fontSize": 20,
                 "font": "open sans",
-                "color": "#c43d3d"
+                "color": "#ffffff"
             }
         },
         "size": {
-            "canvasWidth": 590,
-            "pieOuterRadius": "87%"
+            "canvasWidth": canvasWidth,
+            "canvasHeight": canvasHeight,
+            "pieInnerRadius": null,
+            "pieOuterRadius": "80%"
         },
         "data": {
             "sortOrder": "label-asc",
@@ -239,14 +252,14 @@ function renderDemoGender() {
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 17
             },
             "inner": {
                 "hideWhenLessThanPercentage": 3
             },
             "mainLabel": {
                 "color": "#c43d3d",
-                "fontSize": 11
+                "fontSize": 12
             },
             "percentage": {
                 "color": "#ffffff",

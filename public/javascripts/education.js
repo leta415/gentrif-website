@@ -1,7 +1,26 @@
-// Function to get education data and render the data visualization on the panel
-function renderEducation() {
-    $('#panel').html('');
+/* 
+Function to get education data and render the data visualization on the panel.
 
+Paramters:
+  elementStr - the html element to append the data visualization to
+  svgWidth - width of the svg
+  svgHeight - height of the svg
+*/
+function renderEducation(element, cityName) {
+    $(element).html('');
+    var population;
+    $.getJSON('/data/education').done(function(data) {
+        var i = data.length;
+        //console.log(data);
+        while( i--){
+
+            if(data[i].Area == cityName){
+                population = data[i].sum;
+                break;
+            }
+        }
+        $(element).html("<div>Number of people in " + cityName + " with a Bachelor's Degree or higher</div><div>" + population + "</div>");
+    });
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
@@ -11,10 +30,10 @@ function renderEducation() {
     // };
     // var ajaxLoader = new AjaxLoader("spinner", opts);
     // ajaxLoader.show();
-
+    /*
     var margin = {top: 20, right: 20, bottom: 120, left: 40};
-    var width = 960 - margin.left - margin.right;
-    var height = 462 - margin.top - margin.bottom;
+    var width = svgWidth - margin.left - margin.right;
+    var height = svgHeight - margin.top - margin.bottom;
 
     //define scale of x to be from 0 to width of SVG, with .1 padding in between
     var scaleX = d3.scale.ordinal()
@@ -33,7 +52,7 @@ function renderEducation() {
       .orient("left");
 
     //create svg
-    var svg = d3.select("#panel").append("svg")
+    var svg = d3.select(elementStr).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -190,6 +209,6 @@ function renderEducation() {
               .selectAll("g")
               .delay(delay);
         }
-    }); // end of d3.json call
+    }); // end of d3.json call*/
 
 }  //end of renderEducation()

@@ -1,5 +1,5 @@
-$(overview());
-// $($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
+$($('#cssmenu li').hover(mouseEnterDataButton, mouseLeaveDataButton));
+
 
 // Set up hover for data buttons
 function mouseEnterDataButton() {
@@ -27,24 +27,16 @@ function mouseLeaveDataButton() {}
 
 
 // Set up data visualization change for click or hover
-function overview() {
-    $('#panel').html('');
-}
-
-function map() {
-    $('#panel').html('');
-}
-
 function demoAge() {
-    renderDemoAge();
+    renderDemoAge('#age-div', 480);
 }
 
 function demoRace() {
-    renderDemoRace();
+    renderDemoRace('#race-div', 480);
 }
 
 function demoGender() {
-    renderDemoGender();
+    renderDemoGender('#gender-div', 480);
 }
 
 function income() {
@@ -56,5 +48,5 @@ function homeval() {
 }
 
 function bachdeg() {    
-    renderEducation();
+    renderEducation('#panel', 960, 462);
 }
