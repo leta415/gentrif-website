@@ -13,6 +13,7 @@
     "express-session": "1.11.2",
     "express3-handlebars": "0.5.2",
     "handlebars": "3.0.3",
+    "hover.css": "^2.0.2",
     "pg": "4.3.0",
     "underscore": "^1.8.3"
   }
