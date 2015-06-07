@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="stylesheets/boilerplate.css" />
     <link rel="stylesheet" href="stylesheets/custom.css" />
     <link rel="stylesheet" href="stylesheets/map.css" />
-    <link rel="stylesheet" href="stylesheets/animate.css"
+    
   </head>
 
   <body >
@@ -34,7 +34,7 @@
             <a id="logo" href="#section1"><img src="img/city_icons_1_sm.png" href="#" class="navbar-brand"/></a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-right">
                 <!-- <li><a href="#section1">Home</a></li> -->
                 <li><a href="#section2">Gentrified SD</a></li>
                 <li><a href="#section3">Demographics</a></li>
@@ -53,9 +53,9 @@
 </nav>
 
 <section class="container-fluid" id="section1">
-    <div class="v-center  bounceInDown animated">
+    <div class="v-center">
         <br><br><br><br>
-        <h1 id="logoInTitle" class="text-center gentrification intro"><span class="homeTitle">Co</span><img src="img/city_icons_1_title.png"><span class="homeTitle">ide</span></h1>
+        <h1 id="logoInTitle" class="text-center gentrification intro"><span class="homeTitle animated bounceInLeft">Co</span><img src="img/city_icons_1_title.png" class="animated bounceInLeft"><span class="homeTitle animated bounceInRight">ide</span></h1>
         <h2 class="text-center lato animate slideInDown intro" id="in">S a n&nbsp; D i e g o, &nbsp; C a l i f o r n i a</h2>
 <!--         <p class="text-center">
             <br>
@@ -83,16 +83,17 @@
         </div>
         <div class="row">
             <div class="col-md-3 aboutContent" id="demo">
-                <h2 class="text-center v-center">Demographics</h2>
+                <h2 class="text-center ">Demographics</h2>
             </div>
             <div class="col-md-3 aboutContent" id="market">
-                <h2 class="text-center v-center">Real Estate</h2>
+                <h2 class="text-center ">Real Estate</h2>
             </div>
             <div class="col-md-3 aboutContent" id="land">
-                <h2 class="text-center v-center">Land Use</h2>
+                <h2 class="text-center">Land Use</h2>
             </div>
             <div class="col-md-3 aboutContent" id="culture">
-                <h2 class="text-center v-centery">Culture</h2>
+                <h2 class="text-center">Culture</h2>
+
             </div>
 
         </div>
@@ -126,9 +127,18 @@
         <div id="right-map-data" class="col-md-4">
             <div id="race-div" class="subdata"></div>
             <div id="homevalue-div" class="subdata"></div>
-            <div id="income-div" class="subdata"></div>
+            <div id="income-div" class="subdata">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" id="panel-title"></h3>
+                  </div>
+                  <div class="panel-body" id="panel-body"></div>
+                </div>
+            </div>
             <div id="education-div" class="subdata"></div>
         </div>
+
+
     </div>
 </section>
 

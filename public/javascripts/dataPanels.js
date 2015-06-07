@@ -40,7 +40,7 @@ function demoGender() {
 }
 
 function income() {
-    renderIncome();
+    renderIncome('#income-div', 480);
 }
 
 function homeval() {

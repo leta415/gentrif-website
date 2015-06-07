@@ -192,6 +192,17 @@ section {
   display: block;
 }
 
+.cityName {
+  color: #f44d3c;
+  font-weight: bold;
+}
+
+#income-div{
+  visibility: hidden;
+}
+
+
+
 #head {
   margin-left: 2em;
 }

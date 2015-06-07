@@ -10,7 +10,13 @@ function renderIncome(element,cityName) {
                 break;
             }
         }
-        $(element).html("<div>Median household income in " + cityName + "</div><div>" + income + "</div>");
+        // $(element).html("<div>Median household income in " + cityName + "</div><div>" + income + "</div>");
+
+        document.getElementById("panel-title").innerHTML = "Median Household Income in <span class=\"cityName\">" + cityName + "</span>";
+        document.getElementById("panel-body").innerHTML = income;
+        $("#income-div").css("visibility", "visible");
+        // $(".panel-body").css("visibility", "visible");
+
     });
 
 
