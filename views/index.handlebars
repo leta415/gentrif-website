@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="stylesheets/boilerplate.css" />
     <link rel="stylesheet" href="stylesheets/custom.css" />
     <link rel="stylesheet" href="stylesheets/map.css" />
+
     
   </head>
 
@@ -114,6 +115,9 @@
 
 
 <section class="container-fluid" id="section3">
+
+    <h1 id="SanDiego" class="text-center">San Diego &nbsp;<span id="year">2012</span></h1>
+    <blockquote>As San Diego becomes increasingly urbanized, certain areas are beginning to display symptoms of gentrification.</blockquote>
     <div class="row">
 
         <!-- Left column -->
@@ -130,16 +134,30 @@
         <!-- Right column -->
         <div id="right-map-data" class="col-md-4">
             <div id="race-div" class="subdata"></div>
-            <div id="homevalue-div" class="subdata"></div>
+            <div id="homevalue-div" class="subdata container-fluid">
+                <div class="panel panel-default panel-transparent">
+                  <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="panel-title-home"></h3>
+                  </div>
+                  <div class="panel-body text-center" id="panel-body-home"></div>
+                </div>
+            </div>
             <div id="income-div" class="subdata container-fluid">
                 <div class="panel panel-default panel-transparent">
                   <div class="panel-heading">
-                    <h3 class="panel-title text-center" id="panel-title"></h3>
+                    <h3 class="panel-title text-center" id="panel-title-income"></h3>
                   </div>
-                  <div class="panel-body text-center" id="panel-body"></div>
+                  <div class="panel-body text-center" id="panel-body-income"></div>
                 </div>
             </div>
-            <div id="education-div" class="subdata"></div>
+            <div id="education-div" class="subdata container-fluid">
+                <div class="panel panel-default panel-transparent">
+                  <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="panel-title-ed"></h3>
+                  </div>
+                  <div class="panel-body text-center" id="panel-body-ed"></div>
+                </div>
+            </div>
         </div>
 
 
@@ -147,57 +165,26 @@
 </section>
 
 
-<footer id="footer">
-    <div class="container">
-        <div id="textbox"> <!--
-            <div class="col-xs-6 col-sm-6 col-md-3 column">
-                <h4>Information</h4>
-                <ul class="nav">
-                    <li><a href="about-us.html">Products</a></li>
-                    <li><a href="about-us.html">Services</a></li>
-                    <li><a href="about-us.html">Benefits</a></li>
-                    <li><a href="elements.html">Developers</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Follow Us</h4>
-                <ul class="nav">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Contact Us</h4>
-                <ul class="nav">
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Headquarters</a></li>
-                    <li><a href="#">Management</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Customer Service</h4>
-                <ul class="nav">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                </ul>
-            </div> -->
-            <p class="alignleft">UCSD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cogs121&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team MLJA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leta He, Jamie Yang, Michael Luo, Andie Romero</p>
-            <p class="alignright">©2015</p>
-        </div>
+        <footer class="footer-distributed">
 
-        
-    </div>
-</footer>
+            <div class="footer-right lato">
 
-<div class="scroll-up">
-  <a href="#"><i class="fa fa-angle-up"></i></a>
-</div>
+                <p class="footer-links" id="git">View on Github<a href="https://github.com/leta415/gentrif-website"><i class="fa fa-github"></i></a></p>
 
+            </div>
+
+            <div class="footer-left pt">
+
+                <p class="footer-links">
+                    <a href="#">Collide San Diego</a>
+                    ·
+                    <a href="http://www.pbs.org/pov/flagwars/special_gentrification.php">Learn More</a>
+                </p>
+
+                <p>MLJA UC San Diego &copy; 2015</p>
+            </div>
+
+        </footer>
 
         
 

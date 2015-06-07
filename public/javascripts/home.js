@@ -1,5 +1,5 @@
 function renderHome(element,cityName) {
-    $('#panel').html('');
+    // $('#panel').html('');
     var home;
     $.getJSON('/data/homevalue').done(function(data) {
         var i = data.rows.length;
@@ -11,6 +11,9 @@ function renderHome(element,cityName) {
                 break;
             }
         }
-        $(element).html("<div>Median home value in " + cityName + "</div><div>" + "$" + home + "</div>");
+        // $(element).html("<div>Median home value in " + cityName + "</div><div>" + "$" + home + "</div>");
+        document.getElementById("panel-title-home").innerHTML = "Median Home Value in <span class=\"cityName\">" + cityName + "</span>";
+        document.getElementById("panel-body-home").innerHTML = home;
+        $("#homevalue-div").css("visibility", "visible");
     });
 }

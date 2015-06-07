@@ -14,7 +14,7 @@ html,body {
         font-size:68px;
     }
 }
-
+x
 a {
     color:#999;
 }
@@ -215,16 +215,31 @@ blockquote {
   font-weight: bold;
 }
 
+.subdata {
+  margin-bottom: 10px!important;
+  margin-top: 10px!important;
+}
+
 #income-div{
   visibility: hidden;
 }
 
+#education-div {
+  visibility: hidden;
+}
+
+#homevalue-div {
+  visibility: hidden;
+}
 .panel .panel-default .panel-transparent {
-  width: 80%;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 0;
 }
 
 .panel-body .panel-heading{
   color: #fff;
+  font-size: 50px!important;
 }
 
 .panel-transparent {
@@ -232,7 +247,9 @@ blockquote {
 }
 
 .panel-transparent .panel-heading{
-    background: rgba(122, 130, 136, 0.2)!important;
+    /*background: rgba(122, 130, 136, 0.2)!important;*/
+    background-color:black!important;
+    color: #fff;
 }
 
 .panel-transparent .panel-body{
@@ -405,6 +422,10 @@ p.hiddenText {
 }
 
 
+span#year{
+  font-size: .5em!important;
+}
+
 #section5 {
   background-color: #fff;
 }
@@ -424,20 +445,86 @@ p.hiddenText {
   padding-bottom:40px;
 }
 
-footer {
-  background-color:#2b2b2b;
-    color:#ddd;
-    /*min-height:80px;
-    padding-top:20px;
-    padding-bottom:40px;*/
+#git {
+  font-size: 14px!important;
+  color: #B7B7B6!important;
 }
 
-footer .nav>li>a {
-    padding: 3px;
-    color: #f44d3c;
+.footer-distributed{
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+
+  padding: 45px 50px;
+  margin-top: 0;
+  bottom: -100px;
 }
 
-footer .nav>li>a:hover {
-    background-color:transparent;
-  color:#fff;
+
+.footer-distributed .footer-left p{
+  color:  #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+  font-size:18px;
+  font-weight: bold;
+  color:  #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-right{
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+
+
+.footer-distributed .footer-right a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right{
+    text-align: center;
+  }
+
+  .footer-distributed .footer-right{
+    float: none;
+    margin: 0 auto 20px;
+  }
+
+  .footer-distributed .footer-left p.footer-links{
+    line-height: 1.8;
+  }
 }

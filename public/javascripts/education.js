@@ -7,7 +7,7 @@ Paramters:
   svgHeight - height of the svg
 */
 function renderEducation(element, cityName) {
-    $(element).html('');
+    // $(element).html('');
     var population;
     $.getJSON('/data/education').done(function(data) {
         var i = data.length;
@@ -19,7 +19,10 @@ function renderEducation(element, cityName) {
                 break;
             }
         }
-        $(element).html("<div>Number of people in " + cityName + " with a Bachelor's Degree or higher</div><div>" + population + "</div>");
+        // $(element).html("<div>Number of people in " + cityName + " with a Bachelor's Degree or higher</div><div>" + population + "</div>");
+        document.getElementById("panel-title-ed").innerHTML = "Number of Bachelor's Degree or Higher in <span class=\"cityName\">" + cityName + "</span>";
+        document.getElementById("panel-body-ed").innerHTML = population;
+        $("#education-div").css("visibility", "visible");
     });
     // var opts = {
     //     size: 72,           // Width and height of the spinner

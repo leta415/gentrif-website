@@ -44,9 +44,10 @@ function income() {
 }
 
 function homeval() {
-    $('#panel').html('');
+    // $('#panel').html('');
+    renderHome('#homevalue-div', 480);
 }
 
 function bachdeg() {    
-    renderEducation('#panel', 960, 462);
+    renderEducation('#education-div', 480);
 }

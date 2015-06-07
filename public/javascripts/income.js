@@ -1,6 +1,6 @@
 // Function to get education data and render the data visualization on the panel
 function renderIncome(element,cityName) {
-    $('#panel').html('');
+    // $('#panel').html('');
     var income;
     $.getJSON('/data/income').done(function(data) {
         var i = data.length;
@@ -12,8 +12,8 @@ function renderIncome(element,cityName) {
         }
         // $(element).html("<div>Median household income in " + cityName + "</div><div>" + income + "</div>");
 
-        document.getElementById("panel-title").innerHTML = "Median Household Income in <span class=\"cityName\">" + cityName + "</span>";
-        document.getElementById("panel-body").innerHTML = income;
+        document.getElementById("panel-title-income").innerHTML = "Median Household Income in <span class=\"cityName\">" + cityName + "</span>";
+        document.getElementById("panel-body-income").innerHTML = income;
         $("#income-div").css("visibility", "visible");
         // $(".panel-body").css("visibility", "visible");
 
