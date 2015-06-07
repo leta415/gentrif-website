@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
     <script src="javascripts/d3pie.min.js"></script>
 
@@ -21,7 +23,7 @@
     
   </head>
 
-  <body >
+  <body data-spy="scroll" data-target="#myScrollspy">
     <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -34,20 +36,11 @@
             <a id="logo" href="#section1"><img src="img/city_icons_1_sm.png" href="#" class="navbar-brand"/></a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- <li><a href="#section1">Home</a></li> -->
-                <li><a href="#section2">Gentrified SD</a></li>
-                <li><a href="#section3">Demographics</a></li>
-                <!--<li><a href="#section4">Data</a></li>-->
-                <!-- <li><a href="#section5">Consequences</a></li> -->
-                
-<!--                 <li><a href="#section5">More</a></li>
-                <li><a href="#section6">Last</a></li> -->
+            <ul class="nav navbar-nav navbar-right lato">
+                <li><a href="#section2">About Gentrification</a></li>
+                <li><a href="#section3">San Diego Data</a></li>
                 <li>&nbsp;</li>
             </ul>
-<!--             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-heart-o fa-lg"></i></a></li>
-            </ul> -->
         </div>
     </div>
 </nav>
@@ -55,12 +48,8 @@
 <section class="container-fluid" id="section1">
     <div class="v-center">
         <br><br><br><br>
-        <h1 id="logoInTitle" class="text-center gentrification intro"><span class="homeTitle animated bounceInLeft">Co</span><img src="img/city_icons_1_title.png" class="animated bounceInLeft"><span class="homeTitle animated bounceInRight">ide</span></h1>
-        <h2 class="text-center lato animate slideInDown intro" id="in">S a n&nbsp; D i e g o, &nbsp; C a l i f o r n i a</h2>
-<!--         <p class="text-center">
-            <br>
-            <a href="#" class="btn btn-danger btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal">Get Free Membership</a>
-        </p> -->
+        <h1 id="logoInTitle" class="text-center gentrification intro "><span class="homeTitle animated bounceInLeft">Co</span><img src="img/city_icons_1_title.png" class="animated bounceInLeft"><span class="homeTitle animated bounceInRight">ide</span></h1>
+        <h2 class="text-center pt animate slideInDown intro" id="in">S a n&nbsp; D i e g o, &nbsp; C a l i f o r n i a</h2>
     </div>
     <a href="#section2">
         <div class="scroll-down bounceInDown animated">
@@ -74,11 +63,11 @@
 
 
 <section class="container-fluid" id="section2">
-    <div class="container-fluid pull-left v-center" >
+    <div class="container-fluid v-center about" >
         <div class="container-fluid head">
-            <h1 class="gentrification animated fadeIn text-center">Gentrification</h1>
-            <blockquote class="text-center">
-                <p>A &nbsp;<span id="collision">collision</span> &nbsp;of socioeconomic classes in an urban district that affects the demographics, housing markets, and culture.</p>
+            <h1 class="gentrification animated fadeIn text-center pt">Gentrification</h1>
+            <blockquote class="container-fluid mont italic">
+                <p>A &nbsp;<span id="collision">collision</span>&nbsp;of socioeconomic classes in an urban district<br> that affects the demographics, housing markets, and culture.</p>
             </blockquote>
         </div>
         <div class="row">
@@ -127,12 +116,12 @@
         <div id="right-map-data" class="col-md-4">
             <div id="race-div" class="subdata"></div>
             <div id="homevalue-div" class="subdata"></div>
-            <div id="income-div" class="subdata">
-                <div class="panel panel-default">
+            <div id="income-div" class="subdata container-fluid">
+                <div class="panel panel-default panel-transparent">
                   <div class="panel-heading">
-                    <h3 class="panel-title" id="panel-title"></h3>
+                    <h3 class="panel-title text-center" id="panel-title"></h3>
                   </div>
-                  <div class="panel-body" id="panel-body"></div>
+                  <div class="panel-body text-center" id="panel-body"></div>
                 </div>
             </div>
             <div id="education-div" class="subdata"></div>
