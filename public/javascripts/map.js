@@ -52,7 +52,7 @@ var svg = d3.select("#map").append("svg")
 
 svg.call(tip);
 
-d3.json("/json/mysd.json", function(error, sd) {
+d3.json("/json/mysd2.json", function(error, sd) {
 if (error) return console.error(error);
 // console.log(sd);
 
