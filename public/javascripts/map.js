@@ -129,7 +129,7 @@ svg.selectAll(".subunit")
 
 
       // Gender data
-      renderDemoGender("#gender-div", 330, 300, d.properties.name);
+      // renderDemoGender("#gender-div", 330, 300, d.properties.name);
 
       // Race data
       renderDemoRace("#race-div", 330, 330, d.properties.name);

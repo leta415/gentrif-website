@@ -210,6 +210,25 @@ router.get('/education', function (req, res) {
   });
 });
 
+/* GET higher education data total. */
+router.get('/educationTotal', function (req, res) {
+  //connect to database
+  var conString = process.env.DATABASE_CONNECTION_URL;
+  // initialize connection pool
+  pg.connect(conString, function(err, client, done) {
+    if(err) return console.log(err);
+
+    var query = 'SELECT \"Area\", \"Population\" FROM hhsa_san_diego_demographics_education_2012_norm WHERE \"Education\"=\'Any (Population 25 and older)\'';
+    client.query(query, function(err, result) {
+      // return the client to the connection pool for other requests to reuse
+      done();
+      var passBackArray = _.sortBy(result.rows, 'Area');
+      // console.log(passBackArray);
+      res.json(passBackArray);
+    });
+  });
+});
+
 /*
   --DEPRECATED-- USE /education instead
   NOTE TO DEV: this route should be deleted, I just didn't delete this yet because
