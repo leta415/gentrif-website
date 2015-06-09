@@ -2,6 +2,10 @@
   vertical-align: bottom;
 }
 
+#logoInTitle img {
+  margin-bottom: 8px;
+}
+
 #cssmenu {
   background: #333;
   list-style: none;
@@ -118,7 +122,7 @@
 }
 
 #map-data-row {
-  margin-top: 3em;
+  margin-top: 40px;
 }
 
 #left-map-data {
