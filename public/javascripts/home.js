@@ -13,7 +13,7 @@ function renderHome(element,cityName) {
         }
         // $(element).html("<div>Median home value in " + cityName + "</div><div>" + "$" + home + "</div>");
         document.getElementById("panel-title-home").innerHTML = "Median Home Value in <span class=\"cityName\">" + cityName + "</span>";
-        document.getElementById("panel-body-home").innerHTML = home;
+        document.getElementById("panel-body-home").innerHTML = "$"+home+".00";
         $("#homevalue-div").css("visibility", "visible");
     });
 }

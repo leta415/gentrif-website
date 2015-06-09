@@ -36,7 +36,7 @@ var delphiAreas = [
     ];
 
 // var width = 960, height = 1160;
-var width = 350, height = 600;
+var width = 300, height = 550;
 var margin = 100;
 
 var tip = d3.tip()

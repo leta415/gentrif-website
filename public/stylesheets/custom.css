@@ -108,12 +108,6 @@
   margin-bottom: 60px;
 }
 
-#education-div {
-  margin-left: -10px;
-  /*padding-top: 50px;*/
-  margin-top: 40px;
-}
-
 #gender-div {
   margin-top: 40px;
   margin-right: -120px;
@@ -150,4 +144,22 @@
 }
 .alignright {
   float: right;
+}
+
+#education-div {
+  margin-right: -100px;
+  padding-left: 140px;
+  margin-top: -40px !important; 
+} 
+
+#income-div {
+  margin-right: -140px;
+  padding-left: 170px;
+}
+
+.panel-heading{
+  padding: 8px 12px;
+}
+.panel-body {
+  padding: 8px;
 }
