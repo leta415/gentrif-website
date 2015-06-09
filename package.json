@@ -1,6 +1,6 @@
 {
-  "name": "gentrif-website",
-  "version": "0.0.0",
+  "name": "sd-gentrif",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node app.js"
