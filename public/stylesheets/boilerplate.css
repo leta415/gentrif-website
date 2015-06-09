@@ -245,7 +245,8 @@ blockquote {
 }
 
 .sources-row {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
+  margin: 50px;
 }
 
 .about {

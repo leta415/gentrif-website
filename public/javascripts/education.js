@@ -9,6 +9,7 @@ Paramters:
 function renderEducation(element, cityName) {
     // $(element).html('');
     var population;
+    var total;
     $.getJSON('/data/education').done(function(data) {
         var i = data.length;
         //console.log(data);
@@ -20,10 +21,28 @@ function renderEducation(element, cityName) {
             }
         }
         // $(element).html("<div>Number of people in " + cityName + " with a Bachelor's Degree or higher</div><div>" + population + "</div>");
-        document.getElementById("panel-title-ed").innerHTML = "Number of Bachelor's Degree or Higher in <span class=\"cityName\">" + cityName + "</span>";
-        document.getElementById("panel-body-ed").innerHTML = population;
-        $("#education-div").css("visibility", "visible");
+        document.getElementById("panel-title-ed").innerHTML = "People with Bachelor's Degree or Higher in <span class=\"cityName\">" + cityName + "</span>";
+        $.getJSON('/data/educationTotal').done(function(data) {
+          var i = data.length;
+          while (i--) {
+            if (data[i].Area == cityName) {
+              total = data[i].Population;
+              break;
+            }
+          }
+
+          var percentage = parseFloat(population) / parseFloat(total);
+          console.log(parseFloat(population) + " / " + parseFloat(total) + " = " + percentage);
+          
+
+          document.getElementById("panel-body-ed").innerHTML = "" + Math.round(100*percentage) + "%";
+          $("#education-div").css("visibility", "visible");
+        });
+
+        
     });
+
+
     // var opts = {
     //     size: 72,           // Width and height of the spinner
     //     factor: 0.35,       // Factor of thickness, density, etc.
