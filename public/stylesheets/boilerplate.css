@@ -97,7 +97,7 @@ a:hover {
 .scroll-down {
   position: absolute;
   left: 50%;
-  bottom: 40px;
+  bottom: 80px;
   border: 2px solid #fff;
   border-radius: 50%;
   height: 50px;
@@ -164,8 +164,7 @@ a:hover {
 }
 
 .gentrification {
-  font-size: 6.5em;
-
+  font-size: 6em;
 }
 
 blockquote {
