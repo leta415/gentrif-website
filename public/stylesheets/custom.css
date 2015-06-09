@@ -117,6 +117,10 @@
   /*border: white dashed 2px;*/
 }
 
+#map-data-row {
+  margin-top: 3em;
+}
+
 #left-map-data {
   font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
   /*z-index: 1000000000000000000;*/
