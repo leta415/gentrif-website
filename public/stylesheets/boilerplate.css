@@ -138,7 +138,17 @@ a:hover {
     transform-style: preserve-3d;
 }
 
-/*#section3 {
+
+#section4 {
+  padding-top:70px;
+    min-height:70%;
+    min-height:calc(70% - 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/*#section 3 {
     padding-bottom:50px;
     min-height:100%;
     min-height:calc(100% - 0);
@@ -168,7 +178,7 @@ a:hover {
 }
 
 blockquote {
-    text-align: center; 
+    text-align: center;
     padding-left: 5px;
     margin:0 auto;
     width:auto;
@@ -185,7 +195,7 @@ blockquote {
 
 #in {
   font-style: italic;
-  color:#A2482E;  
+  color:#A2482E;
 }
 
 .intro {
@@ -198,12 +208,45 @@ blockquote {
   color:#444;
 }
 
-#section2 {
+#section2, #section4 {
   background-color: #141311;
   padding-top: 0;
 }
- 
 
+#sources {
+  color: white;
+}
+
+.source-info-ucsd {
+  color: white;
+  margin-left: -200px;
+  padding-top: 5px;
+}
+
+.source-info-zillow {
+  color: white;
+  margin-left: -200px;
+}
+
+#ucsd-logo {
+  width: 40%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 100px;
+}
+
+#zillow-logo {
+  width: 40%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 100px;
+}
+
+.sources-row {
+  padding-top: 50px;
+}
 
 .about {
   margin-top: 4em;
@@ -424,7 +467,7 @@ p.hiddenText {
 #culture {
   /*background-color: #d9534f;*/
   /*overflow: auto;*/
-  
+
 }
 
 #section3 {
